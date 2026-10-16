@@ -1,13 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TODO List</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div id="header__inner" class="header__inner">
+          <h1 id="header__title" class="header__title">TODO LIST</h1>
+          <div id="header__search-container" class="header__search-container">
+            <div id="header__text-box" class="header__text-box">
+              <input
+                type="text"
+                id="header__search-input"
+                class="header__search-input"
+                placeholder="Search note..."
+              />
+              <img
+                src="images/search-icon.svg"
+                alt=""
+                class="search"
+                width="21"
+                height="21"
+                loading="lazy"
+              />
+            </div>
+            <div id="header__filter" class="header__filter">
+              <span>ALL</span>
+              <img
+                src="images/arrow-down.svg"
+                alt=""
+                class="filter-arrow"
+                width="10"
+                height="7"
+                loading="lazy"
+              />
+            </div>
+            <div id="header__theme" class="header__theme">
+              <img
+                src="images/light-theme.svg"
+                alt=""
+                class="theme"
+                width="22"
+                height="22"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="todo-list">
+      <div class="container">
+        <div id="todo-list__inner" class="todo-list__inner">
+          <div id="todo-list__list-container" class="todo-list__list-container">
+            <img
+              src="images/empty.png"
+              alt="Empty Image"
+              class="empty"
+              width="221"
+              height="174"
+              loading="lazy"
+            />
+            <span>Empty...</span>
+          </div>
+          <div id="todo-list__addition" class="todo-list__addition">
+              <img
+                src="images/addition-icon.svg"
+                alt=""
+                class="addition"
+                width="24"
+                height="24"
+                loading="lazy"
+              />
+            </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
