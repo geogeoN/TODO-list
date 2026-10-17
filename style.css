@@ -60,7 +60,7 @@ body {
 .header__text-box {
   flex: 1 0 auto;
   height: 38px;
-  padding-inline: 16px;
+  padding-inline: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -89,7 +89,7 @@ input:focus {
 }
 
 .header__filter {
-  flex: 0 0 85px;
+  flex: 0 0 100px;
   height: 38px;
   padding-inline: 9px;
   display: flex;
