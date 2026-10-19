@@ -1,17 +1,42 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const listContainer = document.getElementById("todo-list__list-container");
+  document.body.addEventListener("click", (event) => {
+    if (event.target.closest("#todo-list__addition")) {
+      const options = {
+        onApply(value) { addTask(value) }
+      };
 
+      const modal = $.modal(options);
+      modal.open();
+
+      document.getElementById("modal__input").focus();
+    }
+
+    const taskBody = event.target.closest(".todo-list__task-body");
+
+    if (taskBody) {
+      const taskId = Number(taskBody.parentElement.id.replace("todo-list__task", ""));
+      const task = tasks.find(el => el.id === taskId);
+      task.completed = !task.completed;
+
+      render();
+    }
+  });
+
+  const listContainer = document.getElementById("todo-list__list-container");
   const tasksList = document.getElementById("todo-list__tasks-list");
 
   const tasks = [
     { id: 1, text: "Go to the cinema", completed: false, isEditing: false },
     { id: 2, text: "Read the recommended book", completed: false, isEditing: false }
-  ]
+  ];
+
+  render();
 
   function render() {
     if (tasks.length > 0) {
       listContainer.innerHTML = `<ul id="todo-list__tasks-list" class="todo-list__tasks-list"></ul>`;
       const list = document.getElementById("todo-list__tasks-list");
+
       tasks.forEach(element => {
         list.insertAdjacentHTML("beforeend", `
           <li id="todo-list__task${element.id}" class="todo-list__task ${element.completed ? "completed" : ""}">
@@ -57,8 +82,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  render();
-
   function addTask(value) {
     const newTask = {
       id: Date.now(),
@@ -71,17 +94,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     render();
   }
-
-  // Временный доступ к модальному окну
-  const newNoteBtn = document.getElementById("todo-list__addition");
-
-  newNoteBtn.addEventListener("click", () => {
-    const options = {
-      onApply(value) { addTask(value) }
-    };
-    const modal = $.modal(options);
-    modal.open();
-  });
-
-
 });
