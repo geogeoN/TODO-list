@@ -180,6 +180,98 @@ input:focus {
   background-color: #534cc2;
 }
 
+.todo-list__tasks-list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.todo-list__task {
+  padding-block: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} 
+
+.todo-list__task:not(:last-of-type) {
+  border-bottom: 1px solid var(--button-background-color);
+}
+
+.todo-list__task-body {
+  flex: 0 0 max-content;
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+
+.todo-list__task-checkbox {
+  width: 26px;
+  aspect-ratio: 1;
+  padding-bottom: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--button-background-color);
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.todo-list__task.completed .todo-list__task-checkbox {
+  background-color: var(--button-background-color);
+}
+
+.todo-list__task.completed .todo-list__task-checkbox::after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url("images/checkmark.svg") center/contain no-repeat;
+  
+} 
+
+.todo-list__task-name {
+  display: block;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.todo-list__task.completed .todo-list__task-name {
+  text-decoration: line-through;
+  color: rgba(255 255 255 / .5);
+}
+
+#todo-list__task-input {
+  display: none;
+  padding: 0;
+  font-family: "Kanit", sans-serif;
+  font-size: 20px;
+  font-weight: var(--font-weight);
+  line-height: 1;
+}
+
+.todo-list__task-buttons {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.edit-btn, .delete-btn {
+  cursor: pointer;
+}
+
+.edit-btn path, .delete-btn path {
+  transition: stroke .2s ease-in-out;
+}
+
+.edit-btn:hover path {
+  stroke: var(--button-background-color);
+}
+
+.delete-btn:hover path {
+  stroke: #e50000;
+}
+
 /* Стилизация модального окна */
 .modal.open .modal__overlay,
 .modal.open .modal__window {
