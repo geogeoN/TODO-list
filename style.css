@@ -241,7 +241,7 @@ input:focus {
   color: rgba(255 255 255 / .5);
 }
 
-#todo-list__task-input {
+input[type="text"].todo-list__task-input {
   display: none;
   padding: 0;
   font-family: "Kanit", sans-serif;
