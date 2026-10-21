@@ -43,6 +43,11 @@
                 loading="lazy"
               />
             </div>
+            <div id="header__filter-list" class="header__filter-list">
+              <div class="filter-list__all" id="filter-list__all">All</div>
+              <div class="filter-list__complete" id="filter-list__complete">Complete</div>
+              <div class="filter-list__incomplete" id="filter-list__incomplete">Incomplete</div>
+            </div>
             <div id="header__theme" class="header__theme">
               <img
                 src="images/light-theme.svg"
@@ -60,8 +65,7 @@
     <section class="todo-list">
       <div class="container">
         <div id="todo-list__inner" class="todo-list__inner">
-          <div id="todo-list__list-container" class="todo-list__list-container">
-          </div>
+          <div id="todo-list__list-container" class="todo-list__list-container"></div>
           <div id="todo-list__addition" class="todo-list__addition">
               <img
                 src="images/addition-icon.svg"
@@ -71,7 +75,18 @@
                 height="24"
                 loading="lazy"
               />
-            </div>
+          </div>
+          <div id="todo-list__undo-btn" class="todo-list__undo-btn">
+            <div id="undo-btn__timer" class="undo-btn__timer">5</div>
+            <div id="undo-btn__name" class="undo-btn__name">UNDO</div>
+            <svg class="undo-btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+              <g id="SVGRepo_iconCarrier"> 
+                <path d="M4 7H15C16.8692 7 17.8039 7 18.5 7.40193C18.9561 7.66523 19.3348 8.04394 19.5981 8.49999C20 9.19615 20 10.1308 20 12C20 13.8692 20 14.8038 19.5981 15.5C19.3348 15.9561 18.9561 16.3348 18.5 16.5981C17.8039 17 16.8692 17 15 17H8.00001M4 7L7 4M4 7L7 10" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> 
+              </g>
+            </svg>
+          </div>
         </div>
       </div>
     </section>
